@@ -1,40 +1,76 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MongoDB Atlas & Next.js Framework
 
-## Getting Started
+This project demonstrates how to integrate Next.js with MongoDB Atlas for storing and retrieving markdown files. Follow the instructions below to set up the project and run it on your local machine.
 
-First, run the development server:
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js
+- A MongoDB Atlas account and a cluster set up. For setting up MongoDB Atlas, follow the [MongoDB Atlas setup tutorial](https://docs.atlas.mongodb.com/getting-started/).
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+First, clone this repository to your local machine and navigate into the project directory:
+
+```bash
+git clone https://github.com/Biswayan-Mehra/MongoDBAtlas-NextJS-Framework.git
+cd MongoDBAtlas-NextJS-Framework
+```
+
+### 2. Install Dependencies
+
+Install the necessary project dependencies by running:
+
+```bash
+npm install
+```
+
+### 3. Configure `.env.local`
+
+Create a `.env.local` file in the root directory of your project. Add your MongoDB Atlas connection string and database name as follows:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+MONGODB_DB=your_database_name
+```
+
+Replace `your_mongodb_connection_string` and `your_database_name` with the appropriate values from your MongoDB Atlas dashboard.
+
+## Running the Development Server
+
+To start the Next.js development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will then be accessible at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Working with Markdown Files
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Uploading Markdown Files to MongoDB Atlas
 
-## Learn More
+To upload markdown files to your MongoDB Atlas database, execute:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+node pushMarkdownData.js
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ensure your markdown files are prepared and structured as expected by the script.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Fetching Markdown Data from MongoDB Atlas
 
-## Deploy on Vercel
+To retrieve your markdown data from MongoDB Atlas and output it into a `markdownData.json` file, run:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+node fetchMarkdownData.js
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-=======
-# MongoDBAtlas-NextJS-Framework
->>>>>>> 030e23bad8229c6ea3323aedd41ca0d4a9b1ee11
+The `markdownData.json` file will be saved in your project directory, containing the fetched data.
+
+## Note
+
+Follow the MongoDB Atlas setup guide closely to ensure a successful connection to your database. Refer to the source code comments or this README for additional guidance on structuring your markdown files or further details on the scripts.
